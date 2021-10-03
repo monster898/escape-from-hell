@@ -1,0 +1,164 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+svg {
+  color: #1296db;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+}
+.wrap {
+  width: 750rpx;
+}
+.personal_info {
+  margin-top: 20rpx;
+  width: 750rpx;
+  height: 150rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.personal_info_container {
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.personal_info_container .personal_profile_container {
+  flex-basis: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.personal_info_container .personal_info_infomation {
+  flex-basis: 70%;
+}
+.personal_info_container .personal_info_information {
+  display: flex;
+  flex-direction: column;
+}
+.personal_info_container .personal_info_top {
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 2rpx;
+}
+.personal_info_container .personal_info_username {
+  font-size: 40rpx;
+  margin-right: 20rpx;
+  font-weight: 520;
+}
+.personal_info_container .personal_info_department {
+  font-size: 25rpx;
+}
+.personal_info_container .personal_info_class {
+  color: #9e9e9e;
+  font-size: 25rpx;
+  margin-top: 2rpx;
+}
+.button_center_container {
+  margin-top: 20rpx;
+  width: 750rpx;
+  height: 200rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.button_center_container .teacher_center {
+  height: 200rpx;
+  width: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 187.5rpx;
+}
+.button_center_container .teacher_center .svg {
+  height: 100rpx;
+  width: 100rpx;
+  background-color: #469ef5;
+  border-radius: 50%;
+}
+.button_center_container .teacher_center_text {
+  font-size: 25rpx;
+}
+.button_center_container .student_center {
+  height: 200rpx;
+  width: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  right: 187.5rpx;
+}
+.button_center_container .student_center .svg {
+  height: 100rpx;
+  width: 100rpx;
+  background-color: #59bb4e;
+  border-radius: 50%;
+}
+.button_center_container .student_center_text {
+  font-size: 25rpx;
+}
+.collage_news {
+  color: #9e9e9e;
+  position: relative;
+  right: 245rpx;
+  margin-top: 40rpx;
+}
+.collage_news_container ._li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  width: 750rpx;
+  height: 100rpx;
+  margin-top: 2rpx;
+  background-color: white;
+}
+.collage_news_container ._li ._a {
+  margin-left: 67rpx;
+  width: 570rpx;
+  overflow-x: hidden;
+  display: inline;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.collage_news_container ._li ._a, .collage_news_container ._li ._a:link, .collage_news_container ._li ._a:visited, .collage_news_container ._li ._a:hover, .collage_news_container ._li ._a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
