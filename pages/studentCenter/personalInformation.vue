@@ -1,6 +1,6 @@
 <template>
 	<view class="personal_information_container">
-		<li class="avatar_container"><view>头像</view><u-avatar class="avatar" :src="src" size="100" mode="circle"></u-avatar></li>
+		<li class="avatar_container"><view>头像</view><u-avatar @click="changeAvatar" class="avatar" :src="src" size="100" mode="circle"></u-avatar></li>
 		<li class="department_container"><view>计算机与软件学院</view><view class="department_container_right"><u-field v-model="user_information.department_class" placeholder="请输入班级" maxlength="10" @input="isShowButton" input-align="right" :field-style="class_position"></u-field><u-field v-model="user_information.department" input-align="right" placeholder="请输入专业" @input="isShowButton" :field-style="department_position"></u-field></view></li>
 		<li><view>学号</view><view class="form_style"><u-field @input="isShowButton" v-model="user_information.id" type="number" input-align="right" :field-style="field_style" maxlength="10" placeholder="请输入学号"></u-field></view></li>
 		<li><view>姓名</view><view class="form_style"><u-field @input="isShowButton" v-model="user_information.name" type="text" input-align="right" :field-style="field_style" maxlength="3" placeholder="请输入姓名"></u-field></view></li>
@@ -80,6 +80,16 @@
 					
 				},
 			})
+			uni.getStorage({
+				key:"src",
+				success: function (res){
+					if(res.data == null) {
+						return;
+					}else {
+						_this.src = res.data;
+					}
+				}
+			})
 		},
 		methods:{
 			isShowButton(){
@@ -94,6 +104,21 @@
 				uni.showToast({
 					icon:"success",
 					title:"修改成功"
+				})
+			},
+			changeAvatar(){
+				var _this = this;
+				uni.chooseImage({
+					count:1,
+					sizeType: ['original', 'compressed'],
+					sourceType:["album"],
+					success: function (res){
+						uni.setStorage({
+							key:"src",
+							data:res.tempFilePaths[0]
+						})
+						_this.src = res.tempFilePaths[0]
+					}
 				})
 			}
 		}

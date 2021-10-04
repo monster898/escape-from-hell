@@ -48,7 +48,7 @@
 		},
 		onShow() {
 			var _this = this;
-			console.log("load!")
+			console.log("load!");
 			uni.getStorage({
 				key:"user_information",
 				success: function (res) {
@@ -58,6 +58,16 @@
 						_this.user_information = JSON.parse(res.data);
 					}
 				},
+			});
+			uni.getStorage({
+				key:"src",
+				success: function (res){
+					if(res.data == null) {
+						return;
+					}else {
+						_this.src = res.data;
+					}
+				}
 			})
 		},
 		methods:{
