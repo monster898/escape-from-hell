@@ -914,7 +914,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"escape-from-hell","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"escape-from-hell","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -7548,7 +7548,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"escape-from-hell","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_NAME":"escape-from-hell","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -7569,14 +7569,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"escape-from-hell","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"escape-from-hell","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"escape-from-hell","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"escape-from-hell","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -7662,7 +7662,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"escape-from-hell","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"escape-from-hell","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -8528,9 +8528,9 @@ function walkJsonObj(jsonObj, walk) {
 
 /***/ }),
 /* 5 */
-/*!*******************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/pages.json ***!
-  \*******************************************************/
+/*!**************************************!*\
+  !*** F:/escape-from-hell/pages.json ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -8671,9 +8671,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 12 */
-/*!**************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/index.js ***!
-  \**************************************************************/
+/*!*********************************************!*\
+  !*** F:/escape-from-hell/uview-ui/index.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8822,9 +8822,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 13 */
-/*!*************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/mixin/mixin.js ***!
-  \*************************************************************************/
+/*!********************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/mixin/mixin.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8895,9 +8895,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 14 */
-/*!***************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/request/index.js ***!
-  \***************************************************************************/
+/*!**********************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/request/index.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9075,9 +9075,9 @@ new Request();exports.default = _default;
 
 /***/ }),
 /* 15 */
-/*!********************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/deepMerge.js ***!
-  \********************************************************************************/
+/*!***************************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/deepMerge.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9115,9 +9115,9 @@ deepMerge;exports.default = _default;
 
 /***/ }),
 /* 16 */
-/*!********************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/deepClone.js ***!
-  \********************************************************************************/
+/*!***************************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/deepClone.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9148,9 +9148,9 @@ deepClone;exports.default = _default;
 
 /***/ }),
 /* 17 */
-/*!***************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/test.js ***!
-  \***************************************************************************/
+/*!**********************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/test.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9389,9 +9389,9 @@ function code(value) {var len = arguments.length > 1 && arguments[1] !== undefin
 
 /***/ }),
 /* 18 */
-/*!**********************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/queryParams.js ***!
-  \**********************************************************************************/
+/*!*****************************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/queryParams.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9457,9 +9457,9 @@ queryParams;exports.default = _default;
 
 /***/ }),
 /* 19 */
-/*!****************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/route.js ***!
-  \****************************************************************************/
+/*!***********************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/route.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10378,9 +10378,9 @@ if (hadRuntime) {
 
 /***/ }),
 /* 23 */
-/*!*********************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/timeFormat.js ***!
-  \*********************************************************************************/
+/*!****************************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/timeFormat.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10439,9 +10439,9 @@ timeFormat;exports.default = _default;
 
 /***/ }),
 /* 24 */
-/*!*******************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/timeFrom.js ***!
-  \*******************************************************************************/
+/*!**************************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/timeFrom.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10496,9 +10496,9 @@ timeFrom;exports.default = _default;
 
 /***/ }),
 /* 25 */
-/*!************************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/colorGradient.js ***!
-  \************************************************************************************/
+/*!*******************************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/colorGradient.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10639,9 +10639,9 @@ function colorToRgba(color) {var alpha = arguments.length > 1 && arguments[1] !=
 
 /***/ }),
 /* 26 */
-/*!***************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/guid.js ***!
-  \***************************************************************************/
+/*!**********************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/guid.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10690,9 +10690,9 @@ guid;exports.default = _default;
 
 /***/ }),
 /* 27 */
-/*!****************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/color.js ***!
-  \****************************************************************************/
+/*!***********************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/color.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10737,9 +10737,9 @@ color;exports.default = _default;
 
 /***/ }),
 /* 28 */
-/*!********************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/type2icon.js ***!
-  \********************************************************************************/
+/*!***************************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/type2icon.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10782,9 +10782,9 @@ type2icon;exports.default = _default;
 
 /***/ }),
 /* 29 */
-/*!**********************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/randomArray.js ***!
-  \**********************************************************************************/
+/*!*****************************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/randomArray.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10799,9 +10799,9 @@ randomArray;exports.default = _default;
 
 /***/ }),
 /* 30 */
-/*!******************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/addUnit.js ***!
-  \******************************************************************************/
+/*!*************************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/addUnit.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10817,9 +10817,9 @@ function addUnit() {var value = arguments.length > 0 && arguments[0] !== undefin
 
 /***/ }),
 /* 31 */
-/*!*****************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/random.js ***!
-  \*****************************************************************************/
+/*!************************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/random.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10837,9 +10837,9 @@ random;exports.default = _default;
 
 /***/ }),
 /* 32 */
-/*!***************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/trim.js ***!
-  \***************************************************************************/
+/*!**********************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/trim.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10862,9 +10862,9 @@ trim;exports.default = _default;
 
 /***/ }),
 /* 33 */
-/*!****************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/toast.js ***!
-  \****************************************************************************/
+/*!***********************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/toast.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10882,9 +10882,9 @@ toast;exports.default = _default;
 
 /***/ }),
 /* 34 */
-/*!********************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/getParent.js ***!
-  \********************************************************************************/
+/*!***************************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/getParent.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10939,9 +10939,9 @@ function getParent(name, keys) {
 
 /***/ }),
 /* 35 */
-/*!******************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/$parent.js ***!
-  \******************************************************************************/
+/*!*************************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/$parent.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10967,9 +10967,9 @@ function $parent() {var name = arguments.length > 0 && arguments[0] !== undefine
 
 /***/ }),
 /* 36 */
-/*!**************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/sys.js ***!
-  \**************************************************************************/
+/*!*********************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/sys.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10985,9 +10985,9 @@ function sys() {
 
 /***/ }),
 /* 37 */
-/*!*******************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/debounce.js ***!
-  \*******************************************************************************/
+/*!**************************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/debounce.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11024,9 +11024,9 @@ debounce;exports.default = _default;
 
 /***/ }),
 /* 38 */
-/*!*******************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/function/throttle.js ***!
-  \*******************************************************************************/
+/*!**************************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/function/throttle.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11066,9 +11066,9 @@ throttle;exports.default = _default;
 
 /***/ }),
 /* 39 */
-/*!***************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/config/config.js ***!
-  \***************************************************************************/
+/*!**********************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/config/config.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11089,9 +11089,9 @@ var version = '1.8.4';var _default =
 
 /***/ }),
 /* 40 */
-/*!***************************************************************************!*\
-  !*** F:/escape-from-hell/escape-from-hell/uview-ui/libs/config/zIndex.js ***!
-  \***************************************************************************/
+/*!**********************************************************!*\
+  !*** F:/escape-from-hell/uview-ui/libs/config/zIndex.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

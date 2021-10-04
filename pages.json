@@ -26,6 +26,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/studentCenter/leave",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的请假",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

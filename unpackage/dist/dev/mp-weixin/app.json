@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/studentCenter/student_center",
-    "pages/studentCenter/personalInformation"
+    "pages/studentCenter/personalInformation",
+    "pages/studentCenter/leave"
   ],
   "subPackages": [],
   "window": {

@@ -86,6 +86,10 @@ svg {
   font-size: 25rpx;
   margin-top: 2rpx;
 }
+.personal_info_container .arrow_right_top {
+  position: relative;
+  left: 20rpx;
+}
 .button_center_container {
   margin-top: 20rpx;
   width: 750rpx;
@@ -133,9 +137,9 @@ svg {
   font-size: 25rpx;
 }
 .collage_news {
-  color: #9e9e9e;
+  color: gray;
   position: relative;
-  right: 245rpx;
+  right: 268rpx;
   margin-top: 40rpx;
 }
 .collage_news_container ._li {
@@ -146,6 +150,7 @@ svg {
   list-style: none;
   width: 750rpx;
   height: 100rpx;
+  padding-right: 40rpx;
   margin-top: 2rpx;
   background-color: white;
 }

@@ -11,14 +11,14 @@
 			</view>
 			<view class="personal_info_infomation">
 			<view class="personal_info_top">
-			<view class="personal_info_username">郭俊峰</view>
-			<view class="personal_info_department">计算机与软件学院</view>
+			<view class="personal_info_username">{{ user_information.name }}</view>
+			<view class="personal_info_department">{{user_information.department}}</view>
 			</view>
 			<view class="personal_info_bottom">
-			<view class="personal_info_class">19智能三班</view>
+			<view class="personal_info_class">{{user_information.department_class}}</view>
 			</view>
 			</view>
-			<u-icon name="arrow-right" color="#CCCCCC" size="50"></u-icon>
+			<u-icon name="arrow-right" class="arrow_right_top" color="#CCCCCC" size="35"></u-icon>
 			</view>
 		</view>
 		<view class="button_center_container">
@@ -33,14 +33,14 @@
 		</view>
 		<view class="collage_news">南工头条</view>
 		<view class="collage_news_container">
-			<li><a href="https://mp.weixin.qq.com/s/NwpxX8kfnZ4V8ou8yK9AEg">纪念九 · 一八活动</a><u-icon name="arrow-right" color="#CCCCCC" size="50"></u-icon></li>
-			<li><a href="https://mp.weixin.qq.com/s/utvdb4EgwDS0RChf5ZIddg">收藏！一次说清新冠疫情期间,消毒与个人</a><u-icon name="arrow-right" color="#CCCCCC" size="50"></u-icon></li>
-			<li><a href="https://mp.weixin.qq.com/s/tW8UGG_CXSKofG8BuynMMQ">关于全校大学生做好新冠肺炎疫情防控的紧</a><u-icon name="arrow-right" color="#CCCCCC" size="50"></u-icon></li>
-			<li><a href="https://mp.weixin.qq.com/s/-dTvech_sg1e1BwNrLLTUg">八一建军节</a><u-icon name="arrow-right" color="#CCCCCC" size="50"></u-icon></li>
-			<li><a href="https://mp.weixin.qq.com/s/a6NgbcI_9L-Gb913bjrMyg">关于收看征兵公益宣传片的通知</a><u-icon name="arrow-right" color="#CCCCCC" size="50"></u-icon></li>
-			<li><a href="https://mp.weixin.qq.com/s/yVI7pzcQ2DGE8037SLED1w">"河"你一起，共度"南"关</a><u-icon name="arrow-right" color="#CCCCCC" size="50"></u-icon></li>
-			<li><a href="https://mp.weixin.qq.com/s/2Uto_fiZOIgF4XZ_v1lUBA">2021年暑假致同学们的一封信</a><u-icon name="arrow-right" color="#CCCCCC" size="50"></u-icon></li>
-			<li><a href="https://mp.weixin.qq.com/s/v5IBjaLJvgagCOXi9l4Aaw">习近平总书记在七一勋章颁授仪式上的讲话</a><u-icon name="arrow-right" color="#CCCCCC" size="50"></u-icon></li>
+			<li><a href="https://mp.weixin.qq.com/s/NwpxX8kfnZ4V8ou8yK9AEg">纪念九 · 一八活动</a><u-icon calss="arrow_right_bottom" name="arrow-right" color="#CCCCCC" size="35"></u-icon></li>
+			<li><a href="https://mp.weixin.qq.com/s/utvdb4EgwDS0RChf5ZIddg">收藏！一次说清新冠疫情期间,消毒与个人</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
+			<li><a href="https://mp.weixin.qq.com/s/tW8UGG_CXSKofG8BuynMMQ">关于全校大学生做好新冠肺炎疫情防控的紧</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
+			<li><a href="https://mp.weixin.qq.com/s/-dTvech_sg1e1BwNrLLTUg">八一建军节</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
+			<li><a href="https://mp.weixin.qq.com/s/a6NgbcI_9L-Gb913bjrMyg">关于收看征兵公益宣传片的通知</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
+			<li><a href="https://mp.weixin.qq.com/s/yVI7pzcQ2DGE8037SLED1w">"河"你一起，共度"南"关</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
+			<li><a href="https://mp.weixin.qq.com/s/2Uto_fiZOIgF4XZ_v1lUBA">2021年暑假致同学们的一封信</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
+			<li><a href="https://mp.weixin.qq.com/s/v5IBjaLJvgagCOXi9l4Aaw">习近平总书记在七一勋章颁授仪式上的讲话</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
 		</view>
 	</view>
 </template>
@@ -51,11 +51,27 @@
 			return {
 				list:["https://cdn.haochen.me/indexImg.jpg"
 				],
-				src:"https://cdn.haochen.me/avatar1-modified.png"
+				src:"https://cdn.haochen.me/avatar1-modified.png",
+				user_information:{
+					name:"王小飞",
+					department:"电子工程",
+					department_class:"21电子三班"
+				}
 			}
 		},
-		onLoad() {
-
+		onShow() {
+			var _this = this;
+			console.log("load!")
+			uni.getStorage({
+				key:"user_information",
+				success: function (res) {
+					if(res.data == null){
+						return;
+					}else{
+						_this.user_information = JSON.parse(res.data);
+					}
+				},
+			})
 		},
 		methods: {
 			navigateToStudentCenter(e){
@@ -132,6 +148,10 @@
 			font-size: 25rpx;
 			margin-top: 2rpx;
 		}
+		.arrow_right_top {
+			position: relative;
+			left: 20rpx;
+		}
 		// .personal_info_profile {
 		// 	width: 75rpx;
 		// 	height: 75rpx;
@@ -188,9 +208,9 @@
 		}
 	}
 	.collage_news {
-		color: rgb(158,158,158);
+		color: rgb(128,128,128);
 		position: relative;
-		right: 245rpx;
+		right: 268rpx;
 		margin-top:40rpx;
 	}
 	.collage_news_container {
@@ -202,6 +222,7 @@
 			list-style: none;
 			width: 750rpx;
 			height: 100rpx;
+			padding-right: 40rpx;
 			margin-top: 2rpx;
 			background-color: rgb(255,255,255);
 			a {
@@ -216,6 +237,10 @@
 			    text-decoration: none;
 			    color:inherit;
 			}
+			// .arrow_right_bottom {
+			// 	position: absolute;
+			// 	right: 20rpx;
+			// }
 		}
 	}
 </style>
