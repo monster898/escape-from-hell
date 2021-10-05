@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/studentCenter/student_center",
     "pages/studentCenter/personalInformation",
-    "pages/studentCenter/leave"
+    "pages/studentCenter/leave",
+    "pages/studentCenter/applyLeave",
+    "pages/studentCenter/leave_details"
   ],
   "subPackages": [],
   "window": {

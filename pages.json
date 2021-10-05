@@ -44,6 +44,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/studentCenter/leave_details",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "请假详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

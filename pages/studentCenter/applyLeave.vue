@@ -25,6 +25,13 @@
 				<u-icon name="arrow-right" color="#CCCCCC" size="35"></u-icon>
 			</view>
 		</view>
+		<view class="line"></view>
+		<view class="height_1 padding">
+			<view>辅导员姓名</view>
+			<view class="arrow_right_2">
+				<u-input v-model="teacher_name" type="text" placeholder="请输入" :customStyle="custom_style_2"/>
+			</view>
+		</view>
 		<view class="height_2 padding">
 			请假原因
 		</view>
@@ -42,13 +49,27 @@
 		<view class="height_1 padding"><view>是否告知家长</view><u-switch v-model="isTellParents"></u-switch></view>
 		<view class="line"></view>
 		<view class="height_1 padding"><view>是否离校</view><u-switch v-model="isLeaveSchool"></u-switch></view>
+		<view class="line" v-if="isLeaveSchool"></view>
+		<view class="height_1 padding" v-if="isLeaveSchool">
+			<view>联系人姓名</view>
+			<view class="arrow_right_2">
+				<u-input v-model="em_name" type="text" placeholder="请输入紧急联系人姓名"/>
+			</view>
+		</view>
+		<view class="line" v-if="isLeaveSchool"></view>
+		<view class="height_1 padding" v-if="isLeaveSchool">
+			<view>联系人电话</view>
+			<view class="arrow_right_2">
+				<u-input v-model="em_phone" type="text" placeholder="请输入紧急联系人电话"/>
+			</view>
+		</view>
 		<view class="padding clearfix">
 			<view>上传附件</view>
 			<image src="https://cdn.haochen.me/upload.svg">
 		</view>
 		<u-button class="apply_button" type="primary" @click="buttonClick">提交</u-button>
 	</view>
-	<u-select v-model="type_show" :list="list" mode="single-column"></u-select>
+	<u-select v-model="type_show" :list="list" mode="single-column" @confirm="confirmType"></u-select>
 	<u-picker v-model="start_time_show" mode="time" :params="params" @confirm="confirmStart"></u-picker>
 	<u-picker v-model="end_time_show" mode="time" :params="params" @confirm="confirmEnd"></u-picker>
 	</view>
@@ -58,6 +79,8 @@
 	export default {
 		data() {
 			return {
+				em_name:"",
+				em_phone:"",
 				isTellParents:false,
 				isLeaveSchool:false,
 				leave_type:"事假",
@@ -66,13 +89,18 @@
 				endTime:"",
 				end_time:"请选择",
 				apply_reason:"",
+				teacher_name:"",
 				custom_style: {
 					marginTop:"2rpx",
 					paddingLeft:"25rpx",
 					backgroundColor:"rgb(255,255,255)",
 					width:"750rpx"
 				},
-				height:200,
+				custom_style_2: {
+					// position:"absolute",
+					width:"100rpx"
+				},
+				height:130,
 				type_show: false,
 				start_time_show: false,
 				end_time_show: false,
@@ -100,26 +128,32 @@
 			}
 		},
 		methods: {
+			confirmType(data){
+				this.leave_type = data[0].value;
+			},
 			confirmStart(data){
 				this.start_time = `${data.year}-${data.month}-${data.day}`+" " + `${data.hour}:${data.minute}`;
-				this.start_time_normal = `${data.year}-${data.month}-${data.day}`;
-				this.startTime = this.start_time;
+				this.start_time_normal = `${data.month}-${data.day}`;
+				this.startTime = this.start_time_normal;
 			},
 			confirmEnd(data){
 				this.end_time = `${data.year}-${data.month}-${data.day}`+" " + `${data.hour}:${data.minute}`;
-				this.end_time_normal = `${data.year}-${data.month}-${data.day}`;
-				this.endTime = this.end_time;
+				this.end_time_normal = `${data.month}-${data.day}`;
+				this.endTime = this.end_time_normal;
 			},
 			buttonClick(){
-				if(this.start_time==="请选择"||this.end_time==="请选择"||this.apply_reason===""){
+				if(this.start_time==="请选择"||this.end_time==="请选择"||this.apply_reason==="" || this.teacher_name === ""){
 					uni.showToast({
 						icon:"error",
 						title:"请完善信息"
 					})
 					return;
 				}
+				let apply_time = new Date();
+				let apply_time_temp = Date.now();
+				apply_time = `${apply_time.getFullYear()}-${Number(apply_time.getMonth()) + 1 < 10 ? `0${Number(apply_time.getMonth()) + 1}`: Number(apply_time.getMonth()) + 1}-${apply_time.getDate() < 10 ? `0${apply_time.getDate()}` : apply_time.getDate()}` + " " + `${apply_time.getHours() < 10 ? `0${apply_time.getHours()}`: apply_time.getHours()}:${apply_time.getMinutes()< 10 ? `0${apply_time.getMinutes()}`: apply_time.getMinutes()}:${apply_time.getSeconds() < 10 ? `0${apply_time.getSeconds()}`: apply_time.getSeconds()}`;
 				let continueDay = (new Date(this.end_time_normal) - new Date(this.start_time_normal))/(1000*60*60*24);
-				console.log(continueDay);
+				let continueHour = Math.floor(((new Date(this.end_time) - new Date(this.start_time))%(1000*60*60*24))/(1000*60*60));
 				let data = JSON.stringify([{
 					leave_type:this.leave_type,
 					start_time:this.start_time,
@@ -129,7 +163,14 @@
 					apply_reason:this.apply_reason,
 					isTellParents:this.isTellParents,
 					isLeaveSchool:this.isLeaveSchool,
-					continueDay
+					teacher_name:this.teacher_name,
+					continueDay,
+					continueHour,
+					status:"审批通过",
+					em_phone:this.em_phone,
+					em_name: this.em_name,
+					apply_time,
+					apply_time_temp
 				}])
 				let data2 = {
 					leave_type:this.leave_type,
@@ -140,11 +181,18 @@
 					apply_reason:this.apply_reason,
 					isTellParents:this.isTellParents,
 					isLeaveSchool:this.isLeaveSchool,
-					continueDay
+					teacher_name:this.teacher_name,
+					continueDay,
+					continueHour,
+					status:"审批通过",
+					em_phone:this.em_phone,
+					em_name: this.em_name,
+					apply_time,
+					apply_time_temp
 				};
 				uni.getStorage({
 					key:"apply_information",
-					fail: function(res){
+					fail: function(){
 							uni.setStorage({
 							key:"apply_information",
 							data,
@@ -152,34 +200,34 @@
 							uni.showToast({
 							icon:"success",
 							title:"提交成功"
-									})
+									});
+							setTimeout(()=>{
+								uni.navigateBack();
+							},1000)
 								}
 							})
 						},
-					success:function(){
-								uni.getStorage({
-								key:"apply_information",
-								success: function (res){
-									data = JSON.parse(res.data);
-									console.log(data);
-									data.push(data2);
-									uni.setStorage({
-										key:"apply_information",
-										data,
-										success: function (){
-											uni.showToast({
-												icon:"success",
-												title:"提交成功"
-											})
-										}
-									})
-								}
+					success:function(res){
+								data = JSON.parse(JSON.stringify(res.data));
+								console.log(data);
+								data = JSON.parse(data);
+								data.push(data2);
+								data = JSON.stringify(data);
+								uni.setStorage({
+									key:"apply_information",
+									data,
+									success: function (){
+										uni.showToast({
+											icon:"success",
+											title:"提交成功"
+										});
+										setTimeout(()=>{
+											uni.navigateBack();
+										},1000)
+									}
 							})
-						}
-					
+					}
 				})
-				
-				
 			},
 		}
 	}
@@ -244,5 +292,8 @@
     }
 	.arrow_right {
 		color: rgb(128,128,128);
+	}
+	.arrow_right_2 {
+		position: relative;
 	}
 </style>

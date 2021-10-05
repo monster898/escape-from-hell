@@ -1,1 +1,1 @@
-<view>leave页面</view>
+<view class="container data-v-765d076f"><block wx:for="{{itemList}}" wx:for-item="item" wx:for-index="__i0__"><view class="data-v-765d076f"><leaveitem vue-id="{{'55446777-1-'+__i0__}}" item="{{item}}" class="data-v-765d076f" bind:__l="__l"></leaveitem></view></block><u-button class="leave_button data-v-765d076f" vue-id="55446777-2" type="primary" data-event-opts="{{[['^click',[['buttonClick']]]]}}" bind:click="__e" bind:__l="__l" vue-slots="{{['default']}}">请假</u-button></view>
