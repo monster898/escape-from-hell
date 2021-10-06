@@ -243,8 +243,10 @@
 	.apply_container {
 		background-color: rgb(255,255,255);
 		.apply_button {
-			position: absolute;
+			position: fixed;
 			bottom: 0;
+			right: 0;
+			left: 0;
 			width: 750rpx;
 		}
 	}

@@ -1,12 +1,12 @@
 <template>
 	<view class="personal_information_container">
 		<li class="avatar_container"><view>头像</view><u-avatar @click="changeAvatar" class="avatar" :src="src" size="100" mode="circle"></u-avatar></li>
-		<li class="department_container"><view>计算机与软件学院</view><view class="department_container_right"><u-field v-model="user_information.department_class" placeholder="请输入班级" maxlength="10" @input="isShowButton" input-align="right" :field-style="class_position"></u-field><u-field v-model="user_information.department" input-align="right" placeholder="请输入专业" @input="isShowButton" :field-style="department_position"></u-field></view></li>
+		<li class="department_container"><view>计算机与软件学院</view><view class="department_container_right"><u-field v-model="user_information.department_class" placeholder="请输入班级" maxlength="30" @input="isShowButton" input-align="right" :field-style="class_position"></u-field><u-field v-model="user_information.department" input-align="right" placeholder="请输入专业" @input="isShowButton" :field-style="department_position"></u-field></view></li>
 		<li><view>学号</view><view class="form_style"><u-field @input="isShowButton" v-model="user_information.id" type="number" input-align="right" :field-style="field_style" maxlength="10" placeholder="请输入学号"></u-field></view></li>
-		<li><view>姓名</view><view class="form_style"><u-field @input="isShowButton" v-model="user_information.name" type="text" input-align="right" :field-style="field_style" maxlength="3" placeholder="请输入姓名"></u-field></view></li>
-		<li><view>性别</view><view class="form_style"><u-field @input="isShowButton" v-model="user_information.gender" type="text" input-align="right" :field-style="field_style" maxlength="1" placeholder="请输入性别"></u-field></view></li>
-		<li><view>民族</view><view class="form_style"><u-field @input="isShowButton" v-model="user_information.nation"  maxlength="2" :field-style="field_style" input-align="right" type="text" placeholder="请输入民族"></u-field></view></li>
-		<li><view>宿舍</view><view class="form_style"><u-field @input="isShowButton" v-model="user_information.dorm" maxlength="12" type="text" input-align="right" :field-style="field_style" placeholder="19号宿舍楼 # 888"></u-field></view></li>
+		<li><view>姓名</view><view class="form_style"><u-field @input="isShowButton" v-model="user_information.name" type="text" input-align="right" :field-style="field_style" maxlength="18" placeholder="请输入姓名"></u-field></view></li>
+		<li><view>性别</view><view class="form_style"><u-field @input="isShowButton" v-model="user_information.gender" type="text" input-align="right" :field-style="field_style" maxlength="4" placeholder="请输入性别"></u-field></view></li>
+		<li><view>民族</view><view class="form_style"><u-field @input="isShowButton" v-model="user_information.nation"  maxlength="10" :field-style="field_style" input-align="right" type="text" placeholder="请输入民族"></u-field></view></li>
+		<li><view>宿舍</view><view class="form_style"><u-field @input="isShowButton" v-model="user_information.dorm" maxlength="30" type="text" input-align="right" :field-style="field_style" placeholder="19号宿舍楼 # 888"></u-field></view></li>
 		<li><view>手机号</view><view class="form_style"><u-field @input="isShowButton" v-model="user_information.phone_number" maxlength="11" input-align="right" :field-style="field_style" type="number" placeholder="13666666666"></u-field></view></li>
 		<li><view>备用手机号</view><view class="form_style"><u-field @input="isShowButton" v-model="user_information.second_phone_number" maxlength="11" input-align="right" :field-style="field_style" type="number" placeholder="13666666666"></u-field></view></li>
 		<li><view>QQ号</view><view class="form_style"><u-field
@@ -18,8 +18,8 @@
 			:field-style="field_style"
 			@input="isShowButton"
 		></u-field></view></li>
-		<li><view>Email</view><view class="form_style"><u-field type="text" @input="isShowButton" v-model="user_information.email" input-align="right" :field-style="field_style" placeholder="请输入备用个人邮箱" maxlength="15">请输入备用个人邮箱</u-field></view></li>
-		<li><view>家长</view><view class="form_style"><u-field v-model="user_information.parent" @input="isShowButton" type="text" input-align="right" :field-style="field_style" placeholder="请输入家长姓名" maxlength="4"></u-field></view></li>
+		<li><view>Email</view><view class="form_style"><u-field type="text" @input="isShowButton" v-model="user_information.email" input-align="right" :field-style="field_style" placeholder="请输入备用个人邮箱" maxlength="30">请输入备用个人邮箱</u-field></view></li>
+		<li><view>家长</view><view class="form_style"><u-field v-model="user_information.parent" @input="isShowButton" type="text" input-align="right" :field-style="field_style" placeholder="请输入家长姓名" maxlength="16"></u-field></view></li>
 		<li><view>家长手机号</view><view class="form_style"><u-field v-model="user_information.parent_phone" @input="isShowButton" input-align="right" :field-style="field_style" type="number" placeholder="13888888888" maxlength="11"></u-field></view></li>
 		<view class="button" v-if="showButton"><u-button type="primary" @click="buttonClick">修改</u-button></view>
 	</view>
@@ -129,6 +129,7 @@
 	.personal_information_container{
 		background-color: rgb(247,247,247);
 		position: absolute;
+		width: 750rpx;
 		height: 100%;
 		li {
 			position: relative;

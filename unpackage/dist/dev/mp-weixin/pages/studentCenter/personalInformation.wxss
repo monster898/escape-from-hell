@@ -27,6 +27,7 @@
 .personal_information_container.data-v-0d59dd04 {
   background-color: #f7f7f7;
   position: absolute;
+  width: 750rpx;
   height: 100%;
 }
 .personal_information_container ._li.data-v-0d59dd04 {
