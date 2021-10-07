@@ -133,9 +133,9 @@
 			padding-bottom: 2rpx;
 		}
 		.personal_info_username {
-			font-size: 40rpx;
+			font-size: 30rpx;
 			margin-right: 20rpx;
-			font-weight: 520;
+			font-weight: 440;
 		}
 		.personal_info_department {
 			font-size: 25rpx;

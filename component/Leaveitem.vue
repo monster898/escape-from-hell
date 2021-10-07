@@ -2,7 +2,7 @@
 	<view class="leave_container" @click="handleClick">
 		<view class="leave_item">
 			<view class="leave_item_top">我的<text class="leave_item_type">{{item.leave_type}}</text>申请<text class="leave_item_startDay">{{item.startTime}}</text></view>
-			<view class="leave_item_middle"><text class="leave_item_startTime">{{item.start_time}}</text><text class="zhi">至</text><text class="leave_item_endTime">{{item.end_time + " "}} </text>(共{{Number(item.continueDay) === 0 ? `${item.continueHour}小时`:`${item.continueDay}天${item.continueHour}小时`}})</view>
+			<view class="leave_item_middle"><text class="leave_item_startTime">{{item.start_time}}</text><text class="zhi">至</text><text class="leave_item_endTime">{{item.end_time + " "}} </text>(共{{Number(item.continueDay) === 0 ? `${Number(item.continueHour)}小时`:`${Number(item.continueDay)}天${Number(item.continueHour)}小时`}})</view>
 			<view class="leave_item_bottom" :class="{finish:isfinish}">{{item.status}}</view>
 		</view>
 		<view class="leave_item_arrow">

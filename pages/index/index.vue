@@ -23,11 +23,11 @@
 		</view>
 		<view class="button_center_container">
 			<view class="teacher_center" @click="navigateToStudentCenter">
-				<view class="teacher_center_icon"><image class="svg" src="https://cdn.haochen.me/teacher.svg"></image></view>
+				<view class="teacher_center_icon"><view class="icon_background"><image class="svg" src="https://cdn.haochen.me/teacher.svg"></image></view></view>
 				<view class="teacher_center_text">教师中心</view>
 			</view>
 			<view class="student_center" @click="navigateToStudentCenter">
-				<view class="student_center_icon"><image class="svg" src="https://cdn.haochen.me/ios-person.svg"></image></view>
+				<view class="student_center_icon"><view class="icon_background2"><image class="svg" src="https://cdn.haochen.me/ios-person.svg"></image></view></view>
 				<view class="student_center_text">学生中心</view>
 			</view>
 		</view>
@@ -146,9 +146,8 @@
 			padding-bottom: 2rpx;
 		}
 		.personal_info_username {
-			font-size: 40rpx;
+			font-size: 30rpx;
 			margin-right: 20rpx;
-			font-weight: 520;
 		}
 		.personal_info_department {
 			font-size: 25rpx;
@@ -189,10 +188,8 @@
 			position: absolute;
 			left: 187.5rpx;
 			.svg {
-				height: 100rpx;
-				width: 100rpx;
-				background-color: #469ef5;
-				border-radius: 50%;
+				height: 60rpx;
+				width: 60rpx;
 			}
 			&_text {
 				font-size:25rpx;
@@ -207,10 +204,8 @@
 			position: absolute;
 			right: 187.5rpx;
 			.svg {
-				height: 100rpx;
-				width: 100rpx;
-				background-color: #59bb4e;
-				border-radius: 50%;
+				height: 80rpx;
+				width: 80rpx;
 			}
 			&_text {
 				font-size:25rpx
@@ -252,5 +247,23 @@
 			// 	right: 20rpx;
 			// }
 		}
+	}
+	.icon_background {
+		width: 100rpx;
+		height: 100rpx;
+		background-color: #469ef5;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+	}
+	.icon_background2{
+		width: 100rpx;
+		height: 100rpx;
+		background-color: #59bb4e;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
 	}
 </style>

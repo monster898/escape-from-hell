@@ -2,7 +2,7 @@
 	<view class="details_container">
 		<view class="status">
 			<view class="status_icon">
-				<image src="https://cdn.haochen.me/pass1.svg">
+				<image src="https://cdn.haochen.me/pass3.svg">
 			</view>
 			<view class="status_text">审批通过</view>
 		</view>

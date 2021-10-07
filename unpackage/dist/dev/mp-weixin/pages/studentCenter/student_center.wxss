@@ -66,9 +66,9 @@
   padding-bottom: 2rpx;
 }
 .personal_info_container .personal_info_username.data-v-620a9751 {
-  font-size: 40rpx;
+  font-size: 30rpx;
   margin-right: 20rpx;
-  font-weight: 520;
+  font-weight: 440;
 }
 .personal_info_container .personal_info_department.data-v-620a9751 {
   font-size: 25rpx;

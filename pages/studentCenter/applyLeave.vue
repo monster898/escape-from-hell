@@ -29,7 +29,7 @@
 		<view class="height_1 padding">
 			<view>辅导员姓名</view>
 			<view class="arrow_right_2">
-				<u-input v-model="teacher_name" type="text" placeholder="请输入" :customStyle="custom_style_2"/>
+				<u-input v-model="teacher_name" type="text" placeholder="请输入" :customStyle="custom_style_2" :placeholderStyle="placeholderStyle"/>
 			</view>
 		</view>
 		<view class="height_2 padding">
@@ -90,11 +90,13 @@
 				end_time:"请选择",
 				apply_reason:"",
 				teacher_name:"",
+				placeholderStyle: "fontSize:32rpx",
 				custom_style: {
 					marginTop:"2rpx",
 					paddingLeft:"25rpx",
 					backgroundColor:"rgb(255,255,255)",
-					width:"750rpx"
+					width:"750rpx",
+					fontSize:"32rpx"
 				},
 				custom_style_2: {
 					// position:"absolute",
@@ -133,16 +135,18 @@
 			},
 			confirmStart(data){
 				this.start_time = `${data.year}-${data.month}-${data.day}`+" " + `${data.hour}:${data.minute}`;
+				this.ios_start_time = `${data.year}/${data.month}/${data.day}`+" " + `${data.hour}:${data.minute}`;
 				this.start_time_normal = `${data.month}-${data.day}`;
 				this.startTime = this.start_time_normal;
 			},
 			confirmEnd(data){
 				this.end_time = `${data.year}-${data.month}-${data.day}`+" " + `${data.hour}:${data.minute}`;
+				this.ios_end_time = `${data.year}/${data.month}/${data.day}`+" " + `${data.hour}:${data.minute}`;
 				this.end_time_normal = `${data.month}-${data.day}`;
 				this.endTime = this.end_time_normal;
 			},
 			buttonClick(){
-				if(this.start_time==="请选择"||this.end_time==="请选择"||this.apply_reason==="" || this.teacher_name === ""){
+				if(this.start_time==="请选择"||this.end_time==="请选择"||this.apply_reason==="" || this.teacher_name === "" ||  (this.isLeaveSchool === true && this.em_name === "") || ( this.isLeaveSchool === true && this.em_phone === "")){
 					uni.showToast({
 						icon:"error",
 						title:"请完善信息"
@@ -152,8 +156,8 @@
 				let apply_time = new Date();
 				let apply_time_temp = Date.now();
 				apply_time = `${apply_time.getFullYear()}-${Number(apply_time.getMonth()) + 1 < 10 ? `0${Number(apply_time.getMonth()) + 1}`: Number(apply_time.getMonth()) + 1}-${apply_time.getDate() < 10 ? `0${apply_time.getDate()}` : apply_time.getDate()}` + " " + `${apply_time.getHours() < 10 ? `0${apply_time.getHours()}`: apply_time.getHours()}:${apply_time.getMinutes()< 10 ? `0${apply_time.getMinutes()}`: apply_time.getMinutes()}:${apply_time.getSeconds() < 10 ? `0${apply_time.getSeconds()}`: apply_time.getSeconds()}`;
-				let continueDay = (new Date(this.end_time_normal) - new Date(this.start_time_normal))/(1000*60*60*24);
-				let continueHour = Math.floor(((new Date(this.end_time) - new Date(this.start_time))%(1000*60*60*24))/(1000*60*60));
+				let continueDay = Math.floor((new Date(this.ios_end_time) - new Date(this.ios_start_time))/(1000*60*60*24));
+				let continueHour = Math.floor(((new Date(this.ios_end_time) - new Date(this.ios_start_time))%(1000*60*60*24))/(1000*60*60));
 				let data = JSON.stringify([{
 					leave_type:this.leave_type,
 					start_time:this.start_time,
