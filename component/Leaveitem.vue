@@ -2,7 +2,7 @@
 	<view class="leave_container" @click="handleClick">
 		<view class="leave_item">
 			<view class="leave_item_top">我的<text class="leave_item_type">{{item.leave_type}}</text>申请<text class="leave_item_startDay">{{item.startTime}}</text></view>
-			<view class="leave_item_middle"><text class="leave_item_startTime">{{item.start_time}}</text><text class="zhi">至</text><text class="leave_item_endTime">{{item.end_time + " "}} </text>(共{{Number(item.continueDay) === 0 ? `${Number(item.continueHour)}小时`:`${Number(item.continueDay)}天${Number(item.continueHour)}小时`}})</view>
+			<view class="leave_item_middle"><text class="leave_item_startTime">{{item.start_time.slice(5)}}</text><text class="zhi">至</text><text class="leave_item_endTime">{{item.end_time.slice(5) + " "}} </text>(共{{Number(item.continueDay) === 0 ? `${Number(item.continueHour)}小时`:`${Number(item.continueDay)}天${Number(item.continueHour)}小时`}})</view>
 			<view class="leave_item_bottom" :class="{finish:isfinish}">{{item.status}}</view>
 		</view>
 		<view class="leave_item_arrow">
@@ -46,20 +46,20 @@
 		padding-left: 25rpx;
 		.leave_item_type {
 			margin-left: 10rpx;
-			font-size: 35rpx;
+			font-size: 30rpx;
 		}
 		.leave_item_top {
-			color: #333333;
+			color: #404040;
 		}
 		.leave_item_middle {
 			margin-top: 15rpx;
 			margin-bottom: 15rpx;
 			color: rgb(128,128,128);
-			font-size: 20rpx
+			font-size: 25rpx
 		}
 		.leave_item_bottom {
 			color: #008000;
-			font-size: 28rpx;
+			font-size: 26rpx;
 		}
 		.leave_item_startDay {
 			position: absolute;

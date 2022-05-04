@@ -2,7 +2,7 @@
 	<view class="details_container">
 		<view class="status">
 			<view class="status_icon">
-				<image src="https://cdn.haochen.me/pass3.svg">
+				<image src="http://kfn-order.oss-cn-shanghai.aliyuncs.com/2022/04/23/bbb906c13f2f4543b0774ba7ea556208.svg">
 			</view>
 			<view class="status_text">审批通过</view>
 		</view>
@@ -47,7 +47,6 @@
 			let apply_time = new Date(randomTime);
 			apply_time = `${apply_time.getFullYear()}-${Number(apply_time.getMonth()) + 1 < 10 ? `0${Number(apply_time.getMonth()) + 1}`: Number(apply_time.getMonth()) + 1}-${apply_time.getDate() < 10 ? `0${apply_time.getDate()}` : apply_time.getDate()}` + " " + `${apply_time.getHours() < 10 ? `0${apply_time.getHours()}`: apply_time.getHours()}:${apply_time.getMinutes()< 10 ? `0${apply_time.getMinutes()}`: apply_time.getMinutes()}`;
 			this.randomTime = apply_time;
-			console.log(this.randomTime);
 		},
 		methods: {
 			handleLeftClick(){
@@ -56,10 +55,20 @@
 				})
 			},
 			handleRightClick(){
-				uni.showToast({
-					icon:"error",
-					title:"网络出错"
+				const applyInformation = uni.getStorageSync("apply_information")
+				applyInformation.forEach((item,index) => {
+					if(item.apply_time_temp === this.item.apply_time_temp){
+						applyInformation.splice(index,1)
+					}
 				})
+				uni.setStorageSync("apply_information", applyInformation)
+				uni.showToast({
+					icon:"success",
+					title:"销假成功"
+				})
+				setTimeout(() => {
+					uni.navigateBack()
+				},1000)
 			}
 		}
 	}
@@ -69,6 +78,7 @@
 	.details_container {
 		background-color: rgb(255,255,255);
 		padding: 0 25rpx 0 25rpx;
+		overflow-x: hidden;
 	}
 	.status {
 		display: flex;
@@ -144,6 +154,7 @@
 	}
 	.margin {
 		margin: 25rpx 0 25rpx 0;
+		color: #404040;
 	}
 	.day {
 		display: inline-block;

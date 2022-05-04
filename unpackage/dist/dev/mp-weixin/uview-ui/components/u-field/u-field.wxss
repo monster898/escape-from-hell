@@ -24,6 +24,19 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+@font-face {
+  font-family: 'iconfont';
+  /* Project id 3350761 */
+  src: url("//at.alicdn.com/t/font_3350761_dbfhyoenwmf.woff2?t=1650630142880") format("woff2"), url("//at.alicdn.com/t/font_3350761_dbfhyoenwmf.woff?t=1650630142880") format("woff"), url("//at.alicdn.com/t/font_3350761_dbfhyoenwmf.ttf?t=1650630142880") format("truetype");
+}
+.iconfont.data-v-1c764f86 {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
 .u-field.data-v-1c764f86 {
   font-size: 28rpx;
   padding: 20rpx 28rpx;
@@ -32,10 +45,8 @@
   color: #303133;
 }
 .u-field-inner.data-v-1c764f86 {
-
   display: flex;
   flex-direction: row;
-
   align-items: center;
 }
 .u-textarea-inner.data-v-1c764f86 {
@@ -47,10 +58,8 @@
   font-size: 28rpx;
 }
 .fild-body.data-v-1c764f86 {
-
   display: flex;
   flex-direction: row;
-
   flex: 1;
   align-items: center;
 }
@@ -72,10 +81,8 @@
   flex: 1 1 130rpx;
   text-align: left;
   position: relative;
-
   display: flex;
   flex-direction: row;
-
   align-items: center;
 }
 .u-required.data-v-1c764f86::before {
@@ -96,10 +103,8 @@
   width: auto;
 }
 .u-clear-icon.data-v-1c764f86 {
-
   display: flex;
   flex-direction: row;
-
   align-items: center;
 }
 .u-error-message.data-v-1c764f86 {

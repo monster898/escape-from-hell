@@ -5,43 +5,43 @@
 		</view>
 		<view class="personal_info" @click="navigateToStudentCenter">
 			<view class="personal_info_container">
-			<view class="personal_profile_container">
-<!-- 				<view class="personal_info_profile"></view>	 -->
-				<u-avatar :src="src" size="75" mode="circle"></u-avatar>
-			</view>
-			<view class="personal_info_infomation">
-			<view class="personal_info_top">
-			<view class="personal_info_username">{{ user_information.name }}</view>
-			<view class="personal_info_department">{{user_information.department}}</view>
-			</view>
-			<view class="personal_info_bottom">
-			<view class="personal_info_class">{{user_information.department_class}}</view>
-			</view>
-			</view>
-			<u-icon name="arrow-right" class="arrow_right_top" color="#CCCCCC" size="35"></u-icon>
+					<u-avatar class="personal_profile_container" :src="user_info.src" size="75" mode="circle"></u-avatar>
+				<view class="personal_info_infomation">
+					<view class="personal_info_top">
+						<view class="personal_info_username">{{ user_info.name }}</view>
+						<view class="personal_info_department">{{user_info.department}}</view>
+					</view>
+					<view class="personal_info_bottom">
+						<view class="personal_info_class">{{user_info.department_class}}</view>
+					</view>
+				</view>
+				<u-icon name="arrow-right" class="arrow_right_top" color="#CCCCCC" size="35"></u-icon>
 			</view>
 		</view>
 		<view class="button_center_container">
 			<view class="teacher_center" @click="navigateToStudentCenter">
-				<view class="teacher_center_icon"><view class="icon_background"><image class="svg" src="https://cdn.haochen.me/teacher.svg"></image></view></view>
+				<view class="teacher_center_icon"><view class="icon_background"><image class="svg" src="http://kfn-order.oss-cn-shanghai.aliyuncs.com/2022/04/22/c8ea58dd4ae0414f99ed11f3c4761607.svg"></image></view></view>
 				<view class="teacher_center_text">教师中心</view>
 			</view>
 			<view class="student_center" @click="navigateToStudentCenter">
-				<view class="student_center_icon"><view class="icon_background2"><image class="svg" src="https://cdn.haochen.me/ios-person.svg"></image></view></view>
+				<view class="student_center_icon"><view class="icon_background2"><image class="svg" src="http://kfn-order.oss-cn-shanghai.aliyuncs.com/2022/04/22/81f1ef9c512e455b89f8881c78967404.svg"></image></view></view>
 				<view class="student_center_text">学生中心</view>
 			</view>
 		</view>
-		<view class="collage_news">南工头条</view>
-		<view class="collage_news_container">
-			<li><a href="https://mp.weixin.qq.com/s/NwpxX8kfnZ4V8ou8yK9AEg">纪念九 · 一八活动</a><u-icon calss="arrow_right_bottom" name="arrow-right" color="#CCCCCC" size="35"></u-icon></li>
-			<li><a href="https://mp.weixin.qq.com/s/utvdb4EgwDS0RChf5ZIddg">收藏！一次说清新冠疫情期间,消毒与个人</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
-			<li><a href="https://mp.weixin.qq.com/s/tW8UGG_CXSKofG8BuynMMQ">关于全校大学生做好新冠肺炎疫情防控的紧</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
-			<li><a href="https://mp.weixin.qq.com/s/-dTvech_sg1e1BwNrLLTUg">八一建军节</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
-			<li><a href="https://mp.weixin.qq.com/s/a6NgbcI_9L-Gb913bjrMyg">关于收看征兵公益宣传片的通知</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
-			<li><a href="https://mp.weixin.qq.com/s/yVI7pzcQ2DGE8037SLED1w">"河"你一起，共度"南"关</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
-			<li><a href="https://mp.weixin.qq.com/s/2Uto_fiZOIgF4XZ_v1lUBA">2021年暑假致同学们的一封信</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
-			<li><a href="https://mp.weixin.qq.com/s/v5IBjaLJvgagCOXi9l4Aaw">习近平总书记在七一勋章颁授仪式上的讲话</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
+		<view>
+			<view class="college_news">南工头条</view>
+			<view class="college_news_container">
+				<li><a>2022年应征入伍报名开始啦!</a><u-icon calss="arrow_right_bottom" name="arrow-right" color="#CCCCCC" size="35"></u-icon></li>
+				<li><a>关于进行2021级新生思想状况及行为表现调查</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
+				<li><a>新生代言人竞选</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
+				<li><a>南阳理工学院第十三届大学生网络文化节</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
+				<li><a>学党史国史，传承红色基因</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
+				<li><a>我校两项活动入围河南省学生工作优秀成果</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
+				<li><a>南工学生工作在线（极客壹佰）智慧学工研发</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
+				<li><a>新生报道温馨提示!</a><u-icon name="arrow-right" calss="arrow_right_bottom" color="#CCCCCC" size="35"></u-icon></li>
+			</view>
 		</view>
+		
 	</view>
 </template>
 
@@ -49,49 +49,30 @@
 	export default {
 		data() {
 			return {
-				list:["https://cdn.haochen.me/indexImg.jpg"
-				],
-				src:"https://cdn.haochen.me/avatar1-modified.png",
-				user_information:{
+				list:["http://kfn-order.oss-cn-shanghai.aliyuncs.com/2022/04/22/0b0abecb3d254c8290633f81dd6702d9.jpg"],
+				user_info:{
 					name:"王小飞",
-					department:"电子工程",
-					department_class:"21电子三班"
+					department:"体育学院",
+					department_class:"21电子三班",
+					src:"http://kfn-order.oss-cn-shanghai.aliyuncs.com/2022/04/22/152ba3240276481cb0013f14b8b5e944.png",
 				}
 			}
 		},
 		onShow() {
-			var _this = this;
-			console.log("load!");
-			uni.getStorage({
-				key:"user_information",
-				success: function (res) {
-					if(res.data == null){
-						return;
-					}else{
-						_this.user_information = JSON.parse(res.data);
-					}
-				},
-			});
-			uni.getStorage({
-				key:"src",
-				success: function (res){
-					if(res.data == null) {
-						return;
-					}else {
-						_this.src = res.data;
-					}
-				}
-			})
+			this.getUserInfo()
 		},
 		methods: {
 			navigateToStudentCenter(e){
 				uni.navigateTo({
 					url:"/pages/studentCenter/student_center"
-					// success: res => {},
-					// fail: () => {},
-					// complete: () => {}
 				})
 			},
+			getUserInfo(){
+				const userInfo = uni.getStorageSync("user_info")
+				if(userInfo){
+					this.user_info = userInfo
+				}
+			}
 		}
 	}
 </script>
@@ -101,6 +82,7 @@
 		color: #1296db
 	}
 	.content {
+		overflow-x: hidden;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -113,7 +95,7 @@
 	.personal_info{
 		margin-top: 20rpx;
 		width: 750rpx;
-		height: 150rpx;
+		height: 130rpx;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
@@ -124,17 +106,13 @@
 		width: 750rpx;
 		display: flex;
 		flex-direction: row;
-		justify-content: center;
-		align-items: center;
 		.personal_profile_container{
-			flex-basis: 15%;
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
+			margin-left: 25rpx;
+			margin-top: 5rpx;
 		}
 		.personal_info_infomation {
 			flex-basis: 70%;
+			margin-left: 17rpx;
 		}
 		.personal_info_information {
 			display: flex;
@@ -146,11 +124,13 @@
 			padding-bottom: 2rpx;
 		}
 		.personal_info_username {
-			font-size: 30rpx;
-			margin-right: 20rpx;
+			font-size: 32rpx;
+			margin-right: 10rpx;
+			color: #404040;
 		}
 		.personal_info_department {
 			font-size: 25rpx;
+			color: #4d4d4d;
 		}
 		.personal_info_class {
 			color: rgb(158,158,158);
@@ -160,15 +140,8 @@
 		.arrow_right_top {
 			position: relative;
 			left: 20rpx;
+			margin: auto;
 		}
-		// .personal_info_profile {
-		// 	width: 75rpx;
-		// 	height: 75rpx;
-		// 	border-radius: 50%;
-		// 	// background-color: red;
-		// 	background: url("../../static/avatar1-modified.png") no-repeat center;
-		// 	background-size: 37.5px;
-		// }
 	}
 	.button_center_container {
 		margin-top: 20rpx;
@@ -176,49 +149,49 @@
 		height: 200rpx;
 		display: flex;
 		flex-direction: row;
+		gap: 280rpx;
 		justify-content: center;
 		align-items: center;
 		background-color: rgb(255,255,255);
 		.teacher_center {
 			height: 200rpx;
-			width: 100rpx;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			position: absolute;
-			left: 187.5rpx;
 			.svg {
-				height: 60rpx;
-				width: 60rpx;
+				height: 50rpx;
+				width: 50rpx;
 			}
 			&_text {
-				font-size:25rpx;
+				color: #404040;
+				margin-top: 5rpx;
+				font-size: 26rpx;
 			}
 		}
 		.student_center {
 			height: 200rpx;
-			width: 100rpx;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-			position: absolute;
-			right: 187.5rpx;
 			.svg {
-				height: 80rpx;
-				width: 80rpx;
+				height: 65rpx;
+				width: 65rpx;
 			}
 			&_text {
-				font-size:25rpx
+				color: #404040;
+				margin-top: 5rpx;
+				font-size: 26rpx;
 			}
 		}
 	}
-	.collage_news {
+	.college_news {
 		color: rgb(128,128,128);
-		position: relative;
-		right: 268rpx;
-		margin-top:40rpx;
+		margin-top: 40rpx;
+		margin-left: 45rpx;
+		margin-bottom: 15rpx;
+		font-size: 28rpx;
 	}
-	.collage_news_container {
+	.college_news_container {
 		li {
 			display: flex;
 			flex-direction: row;
@@ -228,10 +201,12 @@
 			width: 750rpx;
 			height: 100rpx;
 			padding-right: 40rpx;
+			color: #404040;
 			margin-top: 2rpx;
 			background-color: rgb(255,255,255);
+			font-size: 32rpx;
 			a {
-				margin-left: 67rpx;
+				margin-left: 45rpx;
 				width: 570rpx;
 				overflow-x: hidden;
 				display: inline;
@@ -240,26 +215,24 @@
 			}
 			a,a:link,a:visited,a:hover,a:active{
 			    text-decoration: none;
-			    color:inherit;
+			    color: inherit;
 			}
-			// .arrow_right_bottom {
-			// 	position: absolute;
-			// 	right: 20rpx;
-			// }
 		}
 	}
 	.icon_background {
-		width: 100rpx;
-		height: 100rpx;
+		width: 90rpx;
+		height: 90rpx;
 		background-color: #469ef5;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		border-radius: 50%;
+		margin: auto;
 	}
 	.icon_background2{
-		width: 100rpx;
-		height: 100rpx;
+		width: 90rpx;
+		height: 90rpx;
+		margin: auto;
 		background-color: #59bb4e;
 		display: flex;
 		justify-content: center;

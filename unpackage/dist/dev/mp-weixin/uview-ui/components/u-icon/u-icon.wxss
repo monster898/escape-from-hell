@@ -710,6 +710,19 @@
 .uicon-share-fill.data-v-6e20bb40:before {
 	content: "\e65e";
 }
+@font-face {
+  font-family: 'iconfont';
+  /* Project id 3350761 */
+  src: url("//at.alicdn.com/t/font_3350761_dbfhyoenwmf.woff2?t=1650630142880") format("woff2"), url("//at.alicdn.com/t/font_3350761_dbfhyoenwmf.woff?t=1650630142880") format("woff"), url("//at.alicdn.com/t/font_3350761_dbfhyoenwmf.ttf?t=1650630142880") format("truetype");
+}
+.iconfont.data-v-6e20bb40 {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
 .u-icon.data-v-6e20bb40 {
   display: inline-flex;
   align-items: center;

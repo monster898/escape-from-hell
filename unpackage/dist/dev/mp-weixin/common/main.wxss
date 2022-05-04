@@ -24,6 +24,19 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+@font-face {
+  font-family: 'iconfont';
+  /* Project id 3350761 */
+  src: url("//at.alicdn.com/t/font_3350761_dbfhyoenwmf.woff2?t=1650630142880") format("woff2"), url("//at.alicdn.com/t/font_3350761_dbfhyoenwmf.woff?t=1650630142880") format("woff"), url("//at.alicdn.com/t/font_3350761_dbfhyoenwmf.ttf?t=1650630142880") format("truetype");
+}
+.iconfont.data-v-472cff63 {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
 /*每个页面公共css */
 .u-relative.data-v-472cff63,
 .u-rela.data-v-472cff63 {
@@ -56,9 +69,7 @@ text.data-v-472cff63 {
   font-size: 34rpx;
 }
 .u-flex.data-v-472cff63 {
-
   display: flex;
-
   flex-direction: row;
   align-items: center;
 }
@@ -102,9 +113,7 @@ text.data-v-472cff63 {
   text-align: right;
 }
 .u-flex-col.data-v-472cff63 {
-
   display: flex;
-
   flex-direction: column;
 }
 .u-flex-0.data-v-472cff63 {
@@ -3080,9 +3089,7 @@ page.data-v-472cff63 {
 .u-border-top-bottom.data-v-472cff63:after,
 .u-border-top.data-v-472cff63:after,
 .u-border.data-v-472cff63:after {
-
   content: ' ';
-
   position: absolute;
   left: 0;
   top: 0;
@@ -3119,9 +3126,7 @@ page.data-v-472cff63 {
 /* start--clearfix--start */
 .u-clearfix.data-v-472cff63:after,
 .clearfix.data-v-472cff63:after {
-
   content: '';
-
   display: table;
   clear: both;
 }
@@ -3134,14 +3139,6 @@ page.data-v-472cff63 {
 }
 /* end--高斯模糊tabbar底部处理--end */
 /* start--提升H5端uni.toast()的层级，避免被uView的modal等遮盖--start */
-
-
-
-
-
-
-
-
 /* end--提升H5端uni.toast()的层级，避免被uView的modal等遮盖--end */
 /* start--去除button的所有默认样式--start */
 .u-reset-button.data-v-472cff63 {
@@ -3155,13 +3152,6 @@ page.data-v-472cff63 {
   border: none;
 }
 /* end--去除button的所有默认样式--end */
-
-
-
-
-
-
-
 /* start--微信小程序编译后页面有组件名的元素，特别处理--start */
 u-td.data-v-472cff63, u-th.data-v-472cff63 {
   flex: 1;
@@ -3188,40 +3178,7 @@ u-switch.data-v-472cff63 {
 u-dropdown.data-v-472cff63 {
   flex: 1;
 }
-
 /* end-微信小程序编译后页面有组件名的元素，特别处理--end */
-
-
-
-
-
 /* start--头条小程序编译后页面有组件名的元素，特别处理--start */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* end-头条小程序编译后页面有组件名的元素，特别处理--end */
-
-
-
-
-
-
-
-
-
-
-
 

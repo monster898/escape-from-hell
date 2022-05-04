@@ -13,7 +13,8 @@
             "path" : "pages/studentCenter/student_center",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "学生中心"
+                "navigationBarTitleText": "学生中心",
+				"navigationBarBackgroundColor": "#548cf7"
             }
             
         }

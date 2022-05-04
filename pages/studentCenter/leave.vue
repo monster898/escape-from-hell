@@ -1,8 +1,9 @@
 <template>
 	<view class="container">
-		<view v-for="item in itemList">
-			<Leaveitem :item="item"></Leaveitem>
+		<view v-for="item,index in itemList">
+			<Leaveitem :item="item" :key="index"></Leaveitem>
 		</view>
+		<u-empty :show="!itemListLength" text="暂无数据" mode="list" class="empty"></u-empty>
 		<u-button class="leave_button" type="primary" @click="buttonClick">请假</u-button>
 	</view>
 </template>
@@ -13,27 +14,19 @@
 		components:{ Leaveitem },
 		data() {
 			return {
-				id:1,
 				itemList:[]
 			}
 		},
-		onLoad() {
-			console.log("load!");
+		computed:{
+			itemListLength(){
+				return this.itemList.length
+			}
 		},
 		onShow(){
-			var _this = this;
-			console.log("show");
-			uni.getStorage({
-				key:"apply_information",
-				fail: function(){
-					_this.itemList = [];
-				},
-				success: function(res){
-					let data = JSON.parse(JSON.stringify(res.data));
-					_this.itemList = JSON.parse(data);
-					console.log(_this.itemList);
-				}
-			})
+			const applyInformation = uni.getStorageSync("apply_information")
+			if(applyInformation){
+				this.itemList = applyInformation
+			}
 		},
 		methods: {
 			buttonClick(){
@@ -47,12 +40,20 @@
 
 <style lang="scss" scoped>
 .container {
-	position: absolute;
+	width: 100vw;
+	min-height: 100vh;
+	position: relative;
 	background-color: rgb(247,247,247);
 	.leave_button {
 		position: fixed;
 		bottom: 0;
 		width: 750rpx;
+	}
+	.empty {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
 	}
 }
 </style>

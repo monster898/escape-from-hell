@@ -24,10 +24,24 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+@font-face {
+  font-family: 'iconfont';
+  /* Project id 3350761 */
+  src: url("//at.alicdn.com/t/font_3350761_dbfhyoenwmf.woff2?t=1650630142880") format("woff2"), url("//at.alicdn.com/t/font_3350761_dbfhyoenwmf.woff?t=1650630142880") format("woff"), url("//at.alicdn.com/t/font_3350761_dbfhyoenwmf.ttf?t=1650630142880") format("truetype");
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
 svg {
   color: #1296db;
 }
 .content {
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +54,7 @@ svg {
 .personal_info {
   margin-top: 20rpx;
   width: 750rpx;
-  height: 150rpx;
+  height: 130rpx;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -51,18 +65,14 @@ svg {
   width: 750rpx;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
 .personal_info_container .personal_profile_container {
-  flex-basis: 15%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  margin-left: 25rpx;
+  margin-top: 5rpx;
 }
 .personal_info_container .personal_info_infomation {
   flex-basis: 70%;
+  margin-left: 17rpx;
 }
 .personal_info_container .personal_info_information {
   display: flex;
@@ -74,11 +84,13 @@ svg {
   padding-bottom: 2rpx;
 }
 .personal_info_container .personal_info_username {
-  font-size: 30rpx;
-  margin-right: 20rpx;
+  font-size: 32rpx;
+  margin-right: 10rpx;
+  color: #404040;
 }
 .personal_info_container .personal_info_department {
   font-size: 25rpx;
+  color: #4d4d4d;
 }
 .personal_info_container .personal_info_class {
   color: #9e9e9e;
@@ -88,6 +100,7 @@ svg {
 .personal_info_container .arrow_right_top {
   position: relative;
   left: 20rpx;
+  margin: auto;
 }
 .button_center_container {
   margin-top: 20rpx;
@@ -95,49 +108,49 @@ svg {
   height: 200rpx;
   display: flex;
   flex-direction: row;
+  gap: 280rpx;
   justify-content: center;
   align-items: center;
   background-color: white;
 }
 .button_center_container .teacher_center {
   height: 200rpx;
-  width: 100rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: absolute;
-  left: 187.5rpx;
 }
 .button_center_container .teacher_center .svg {
-  height: 60rpx;
-  width: 60rpx;
+  height: 50rpx;
+  width: 50rpx;
 }
 .button_center_container .teacher_center_text {
-  font-size: 25rpx;
+  color: #404040;
+  margin-top: 5rpx;
+  font-size: 26rpx;
 }
 .button_center_container .student_center {
   height: 200rpx;
-  width: 100rpx;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: absolute;
-  right: 187.5rpx;
 }
 .button_center_container .student_center .svg {
-  height: 80rpx;
-  width: 80rpx;
+  height: 65rpx;
+  width: 65rpx;
 }
 .button_center_container .student_center_text {
-  font-size: 25rpx;
+  color: #404040;
+  margin-top: 5rpx;
+  font-size: 26rpx;
 }
-.collage_news {
+.college_news {
   color: gray;
-  position: relative;
-  right: 268rpx;
   margin-top: 40rpx;
+  margin-left: 45rpx;
+  margin-bottom: 15rpx;
+  font-size: 28rpx;
 }
-.collage_news_container ._li {
+.college_news_container ._li {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -146,33 +159,37 @@ svg {
   width: 750rpx;
   height: 100rpx;
   padding-right: 40rpx;
+  color: #404040;
   margin-top: 2rpx;
   background-color: white;
+  font-size: 32rpx;
 }
-.collage_news_container ._li ._a {
-  margin-left: 67rpx;
+.college_news_container ._li ._a {
+  margin-left: 45rpx;
   width: 570rpx;
   overflow-x: hidden;
   display: inline;
   white-space: nowrap;
   text-decoration: none;
 }
-.collage_news_container ._li ._a, .collage_news_container ._li ._a:link, .collage_news_container ._li ._a:visited, .collage_news_container ._li ._a:hover, .collage_news_container ._li ._a:active {
+.college_news_container ._li ._a, .college_news_container ._li ._a:link, .college_news_container ._li ._a:visited, .college_news_container ._li ._a:hover, .college_news_container ._li ._a:active {
   text-decoration: none;
   color: inherit;
 }
 .icon_background {
-  width: 100rpx;
-  height: 100rpx;
+  width: 90rpx;
+  height: 90rpx;
   background-color: #469ef5;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  margin: auto;
 }
 .icon_background2 {
-  width: 100rpx;
-  height: 100rpx;
+  width: 90rpx;
+  height: 90rpx;
+  margin: auto;
   background-color: #59bb4e;
   display: flex;
   justify-content: center;

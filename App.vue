@@ -1,7 +1,9 @@
 <script>
+	import {checkUpdateVersion} from "utils/common.js"
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
+			checkUpdateVersion()
 		},
 		onShow: function() {
 			console.log('App Show')

@@ -76,3 +76,18 @@ $uni-color-paragraph: #3F536E; // 文章段落颜色
 $uni-font-size-paragraph:15px;
 
 @import 'uview-ui/theme.scss';
+
+@font-face {
+  font-family: 'iconfont';  /* Project id 3350761 */
+  src: url('//at.alicdn.com/t/font_3350761_dbfhyoenwmf.woff2?t=1650630142880') format('woff2'),
+       url('//at.alicdn.com/t/font_3350761_dbfhyoenwmf.woff?t=1650630142880') format('woff'),
+       url('//at.alicdn.com/t/font_3350761_dbfhyoenwmf.ttf?t=1650630142880') format('truetype');
+}
+
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
